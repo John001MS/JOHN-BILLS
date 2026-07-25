@@ -1,20 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>M.S. STORE Billing</title>
-<link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-
-<header>
-<h1>M.S. STORE</h1>
-<p>Billing Software</p>
-</header>
-
-<div class="container">
 <div class="card">
+
+<h2>M.S. STORE</h2>
+
+<p>
+Bill No: <span id="billNo"></span><br>
+Date: <span id="billDate"></span>
+</p>
+
+<input type="text" id="customerName" placeholder="Customer Name"><br><br>
+
+<input type="text" id="customerMobile" placeholder="Mobile Number"><br><br>
 
 <input type="text" id="itemName" placeholder="Product Name"><br><br>
 
@@ -35,8 +30,7 @@
 <th>Total</th>
 </tr>
 </thead>
-<tbody>
-</tbody>
+<tbody></tbody>
 </table>
 
 <h2>Grand Total: ₹<span id="grandTotal">0.00</span></h2>
@@ -44,9 +38,3 @@
 <button onclick="window.print()">Print Bill</button>
 
 </div>
-</div>
-
-<script src="js/script.js"></script>
-
-</body>
-</html>
