@@ -1,18 +1,7 @@
-// Bill Number
-const billNo = "MS" + Date.now();
-document.getElementById("billNo").textContent = billNo;
-
-// Date & Time
-const now = new Date();
-document.getElementById("billDate").textContent = now.toLocaleString();
-
-// Grand Total
 let grandTotal = 0;
 
-// Table Body
 const tableBody = document.querySelector("#billTable tbody");
 
-// Add Item Button
 document.getElementById("addItem").addEventListener("click", function () {
 
     const itemName = document.getElementById("itemName").value.trim();
@@ -20,7 +9,7 @@ document.getElementById("addItem").addEventListener("click", function () {
     const price = parseFloat(document.getElementById("itemPrice").value);
 
     if (!itemName || isNaN(qty) || isNaN(price)) {
-        alert("Please fill all product details.");
+        alert("Please enter all product details.");
         return;
     }
 
@@ -38,17 +27,13 @@ document.getElementById("addItem").addEventListener("click", function () {
 
     tableBody.innerHTML += row;
 
-    document.getElementById("grandTotal").textContent =
-        grandTotal.toFixed(2);
+    document.getElementById("grandTotal").textContent = grandTotal.toFixed(2);
 
-    // Clear product fields
-    document.getElementById("barcode").value = "";
+    // Clear input fields
     document.getElementById("itemName").value = "";
     document.getElementById("itemQty").value = "";
     document.getElementById("itemPrice").value = "";
-});
 
-// PDF Button (Coming Soon)
-document.getElementById("downloadPdf").addEventListener("click", function () {
-    alert("PDF Download feature will be added in the next step.");
+    // Focus back on the product name
+    document.getElementById("itemName").focus();
 });
