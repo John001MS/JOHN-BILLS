@@ -3,10 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JOHN-BILLS</title>
+  <title>M.S. STORE Billing Software</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Welcome to JOHN-BILLS</h1>
-  <p>Billing Software is under development.</p>
+
+  <div class="container">
+    <h1>M.S. STORE</h1>
+    <p>Simple Billing Software</p>
+
+    <form id="billForm">
+      <input type="text" id="itemName" placeholder="Item Name" required>
+
+      <input type="number" id="itemQty" placeholder="Quantity" required>
+
+      <input type="number" id="itemPrice" placeholder="Price (₹)" required>
+
+      <button type="submit">Add Item</button>
+    </form>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Qty</th>
+          <th>Price</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody id="billItems"></tbody>
+    </table>
+
+    <h2>Total: ₹<span id="grandTotal">0</span></h2>
+
+    <button onclick="window.print()">Print Bill</button>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
