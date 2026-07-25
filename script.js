@@ -37,3 +37,10 @@ document.getElementById("addItem").addEventListener("click", function () {
     // Focus back on the product name
     document.getElementById("itemName").focus();
 });
+// Bill Number
+const billNo = "MS" + Date.now();
+document.getElementById("billNo").textContent = billNo;
+
+// Current Date & Time
+const now = new Date();
+document.getElementById("billDate").textContent = now.toLocaleString();
