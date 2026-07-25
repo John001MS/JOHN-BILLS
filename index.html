@@ -1,68 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>M.S. STORE Billing Software</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M.S. STORE Billing</title>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <div class="container">
-    <header>
-      <h1>M.S. STORE</h1>
-      <p>Professional Billing Software</p>
-    </header>
+<header>
+<h1>M.S. STORE</h1>
+<p>Billing Software</p>
+</header>
 
-    <section class="customer">
-      <h2>Customer Details</h2>
+<div class="container">
+<div class="card">
 
-      <input type="text" id="customerName" placeholder="Customer Name / வாடிக்கையாளர் பெயர்">
+<input type="text" id="itemName" placeholder="Product Name"><br><br>
 
-      <input type="text" id="customerMobile" placeholder="Mobile Number">
+<input type="number" id="itemQty" placeholder="Quantity"><br><br>
 
-      <div class="bill-info">
-        <p><strong>Bill No:</strong> <span id="billNo"></span></p>
-        <p><strong>Date:</strong> <span id="billDate"></span></p>
-      </div>
-    </section>
+<input type="number" id="itemPrice" placeholder="Price"><br><br>
 
-    <section class="billing">
-      <h2>Add Product</h2>
+<button id="addItem">Add Item</button>
 
-      <input type="text" id="barcode" placeholder="Barcode">
+<hr>
 
-      <input type="text" id="itemName" placeholder="Product Name">
+<table border="1" width="100%" id="billTable">
+<thead>
+<tr>
+<th>Item</th>
+<th>Qty</th>
+<th>Price</th>
+<th>Total</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
 
-      <input type="number" id="itemQty" placeholder="Qty">
+<h2>Grand Total: ₹<span id="grandTotal">0.00</span></h2>
 
-      <input type="number" id="itemPrice" placeholder="Price">
+<button onclick="window.print()">Print Bill</button>
 
-      <button id="addItem">Add Item</button>
-    </section>
+</div>
+</div>
 
-    <table id="billTable">
-      <thead>
-        <tr>
-          <th>Product</th>
-          <th>Qty</th>
-          <th>Price</th>
-          <th>Total</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-
-    <h2>Total : ₹<span id="grandTotal">0.00</span></h2>
-
-    <div class="buttons">
-      <button onclick="window.print()">🖨 Print Bill</button>
-      <button id="downloadPdf">📄 Download PDF</button>
-    </div>
-
-  </div>
-
-  <script src="script.js"></script>
+<script src="js/script.js"></script>
 
 </body>
 </html>
