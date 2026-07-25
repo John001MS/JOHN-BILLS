@@ -1,15 +1,31 @@
+let grandTotal = 0;
 
-body {
-  font-family: Arial, sans-serif;
-  background: #f5f5f5;
-  margin: 0;
-  padding: 20px;
-}
+const billForm = document.getElementById("billForm");
+const billItems = document.getElementById("billItems");
+const grandTotalDisplay = document.getElementById("grandTotal");
 
-h1 {
-  color: #0066cc;
-}
+billForm.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-p {
-  color: #333;
-}
+    const itemName = document.getElementById("itemName").value;
+    const itemQty = parseFloat(document.getElementById("itemQty").value);
+    const itemPrice = parseFloat(document.getElementById("itemPrice").value);
+
+    const total = itemQty * itemPrice;
+    grandTotal += total;
+
+    const row = document.createElement("tr");
+
+    row.innerHTML = `
+        <td>${itemName}</td>
+        <td>${itemQty}</td>
+        <td>₹${itemPrice.toFixed(2)}</td>
+        <td>₹${total.toFixed(2)}</td>
+    `;
+
+    billItems.appendChild(row);
+
+    grandTotalDisplay.textContent = grandTotal.toFixed(2);
+
+    billForm.reset();
+});
